@@ -1,0 +1,2 @@
+[console_scripts]
+ppt-generate = ppt_generator.cli:main

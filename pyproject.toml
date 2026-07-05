@@ -1,0 +1,50 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ppt-generator"
+version = "1.0.0"
+description = "Generate professional PowerPoint presentations from PDF chapter content"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+authors = [
+    {name = "Your Name", email = "your.email@example.com"}
+]
+keywords = ["ppt", "powerpoint", "presentation", "pdf", "pymupdf", "python-pptx"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+dependencies = [
+    "PyMuPDF>=1.24.0",
+    "python-pptx>=0.6.23",
+]
+
+[project.optional-dependencies]
+llm = [
+    "openai>=1.0.0",
+    "httpx>=0.24.0",
+]
+dev = [
+    "pytest>=7.0",
+    "black>=23.0",
+    "mypy>=1.0",
+]
+
+[project.scripts]
+ppt-generate = "ppt_generator.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/yourusername/ppt-generator"
+Repository = "https://github.com/yourusername/ppt-generator"
+
+[tool.setuptools.packages.find]
+include = ["ppt_generator*"]
